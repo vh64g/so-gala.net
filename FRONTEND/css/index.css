@@ -1,0 +1,228 @@
+/* Include */
+@font-face {
+    font-family: "monument_extendedregular";
+    src: url("https://www.yudiz.com/codepen/photography-banner/monumentextended-regular.woff2")
+    format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Extenda Trial 20 Micro";
+    src: url("https://www.yudiz.com/codepen/photography-banner/Extenda-20Micro.woff2")
+    format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Extenda Trial 30 Deca";
+    src: url("https://www.yudiz.com/codepen/photography-banner/Extenda-30Deca.woff2")
+    format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Common CSS */
+body,
+html {
+    overflow-x: hidden !important;
+}
+
+body {
+    margin: 0;
+    background-color: #212121;
+    background-image: url("https://www.yudiz.com/codepen/photography-banner/frame.png");
+}
+
+::selection {
+    background-color: rgba(241, 231, 40, 0.2);
+    color: #ffffff;
+}
+
+/* Demo css -start */
+.info-section {
+    height: 100svh;
+    min-height: 780px;
+    padding: 0 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+}
+
+.info-section::before {
+    content: "";
+    border-radius: 198px 0;
+    opacity: 0.4;
+    filter: blur(162px);
+    height: 35%;
+    width: 55%;
+    position: absolute;
+    top: -40%;
+    left: -66%;
+    transform: translate(50%, 50%);
+    z-index: -1;
+}
+
+/* left part */
+.left-part {
+    padding: 20px 0 0;
+    overflow: hidden;
+}
+
+.left-part h1 {
+    margin: 0;
+    color: #fff;
+    font-family: "Extenda Trial 30 Deca", serif;
+    font-size: clamp(100px, 18.5vw, 282px);
+    line-height: 0.75;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.left-part h1 .text {
+    color: #f1e728;
+    display: block;
+    height: 200px;
+}
+
+.left-part h1 .d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.left-part h1 .char {
+    transform: translateY(-515px);
+    transition: transform 0.5s;
+}
+
+.typed-cursor {
+    display: none !important;
+}
+
+.left-part p {
+    width: 72%;
+    margin: 20px 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 2;
+    font-family: "monument_extendedregular", serif;
+    opacity: 0.8;
+}
+
+/* button */
+.book-link {
+    margin: 40px 0 0;
+    padding: 0;
+    border: 0;
+    font-size: 56px;
+    line-height: 1;
+    color: #f1f1f1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Extenda Trial 20 Micro", serif;
+    font-weight: 300;
+    font-style: normal;
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    position: relative;
+    text-decoration: none;
+}
+
+.book-link .linktext {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.book-link .linktext::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 6px;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transform: scaleX(1);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 0 0;
+}
+
+.book-link:hover .linktext:before {
+    transform: scaleX(0);
+    transform-origin: 100% 100%;
+}
+
+.book-link .arrow {
+    height: 36px;
+    width: 36px;
+    top: -5px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-link .arrow::before,
+.book-link .arrow::after {
+    position: absolute;
+    content: "";
+    background-color: #f1e728;
+    transition: all ease-in-out 0.35s;
+    transform-origin: 0 0;
+    border-radius: 30px;
+}
+
+.book-link .arrow::before {
+    height: 2px;
+    width: 100%;
+    top: 0;
+    right: 0;
+}
+
+.book-link .arrow::after {
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+.book-link:hover .arrow::before {
+    width: 65%;
+}
+
+.book-link:hover .arrow::after {
+    height: 65%;
+}
+
+.book-link .arrow span {
+    background-color: #f1e728;
+    height: 2px;
+    width: 100%;
+    display: inline-block;
+    transform: rotate(-45deg) translate(-3px, -1px);
+    transform-origin: right top;
+    border-radius: 30px;
+    transition: all ease-in-out 0.35s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.book-link .arrow span::before {
+    background-color: #f1e728;
+    content: "";
+    height: 100%;
+    width: 15px;
+    left: -15px;
+    top: 0;
+    position: absolute;
+}
